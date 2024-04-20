@@ -131,7 +131,7 @@ def group_and_assign_ibs(sft, candidate_ids, ROIs,
     for roi in ROIs:
         rois_info.append((
             get_root_image_name(os.path.basename(roi.get_filename())),
-            np.array(np.where(roi.get_data())).T))
+            np.array(np.where(roi.get_fdata())).T))
 
     all_ics_closest_pairs = get_closest_roi_pairs_for_all_streamlines(
         candidate_streamlines, rois_info)

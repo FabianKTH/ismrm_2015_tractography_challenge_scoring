@@ -68,7 +68,7 @@ def compute_bundle_coverage_scores(sft, ground_truth_mask):
     ground_truth_mask : `:class:Nifti1Image` object
         Mask of the ground truth bundle.
     """
-    gt_data = ground_truth_mask.get_data()
+    gt_data = ground_truth_mask.get_fdata()
     candidate_data = _create_binary_map(sft, ground_truth_mask)
     overlap = _compute_overlap(gt_data, candidate_data)
     overreach = _compute_overreach(gt_data, candidate_data)
